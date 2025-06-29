@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+{% block title %}
+<title> Editer un article </title>
+{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'static/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1> Ajouter un article</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" class="btn btn-submit" value="Editer">
+</form>
+{% endblock %}
+
+
+
